@@ -40,11 +40,11 @@ class BukuController extends Controller
         );
 
         Buku::where('id', $id)
-            ->update(
-                ['nama_buku' => $request->nama_buku],
-                ['jenis_buku_id' => $request->jenis_id],
-                ['stok' => $request->stok]
-            );
+            ->update([
+                'nama_buku' => $request->nama_buku,
+                'jenis_buku_id' => $request->jenis_id,
+                'stok' => $request->stok
+            ]);
         return back();
     }
 }
