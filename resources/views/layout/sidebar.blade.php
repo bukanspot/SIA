@@ -12,19 +12,19 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item{{ request()->is('/pinjam*') ? ' active' : ''}}">
+            <li class="nav-item{{ request()->is('pinjam*') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ url('/pinjam') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Pinjam</p>
                 </a>
             </li>
-            <li class="nav-item{{ request()->is('/buku*') ? ' active' : ''}}">
+            <li class="nav-item{{ request()->is('buku*') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ url('/buku') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Buku</p>
                 </a>
             </li>
-            <li class="nav-item{{ request()->is('/pegawai*') ? ' active' : ''}}">
+            <li class="nav-item{{ request()->is('pegawai*') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ url('/pegawai') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Pegawai</p>
