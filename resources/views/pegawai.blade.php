@@ -14,8 +14,8 @@
                <table class="table">
                     <colgroup>
                          <col span="1" style="width: 10%;">
-                         <col span="1" style="width: 30%;">
-                         <col span="1" style="width: 10%;">
+                         <col span="1" style="width: 25%;">
+                         <col span="1" style="width: 15%;">
                          <col span="1" style="width: 25%;">
                          <col span="1" style="width: 20%;">
                     </colgroup>
@@ -46,7 +46,7 @@
                                    {{ $pegawai->nama_pegawai }}
                               </td>
                               <td>
-                                   {{ $pegawai->jabatan_pegawai_id }}
+                                   {{ $pegawai->jabatan_pegawai->nama_jabatan }}
                               </td>
                               <td>
                                    {{ $pegawai->alamat }}

@@ -8,7 +8,7 @@ class Pegawai extends Model
 {
     protected $fillable = ['nama_pegawai', 'jabatan_pegawai_id', 'alamat'];
 
-    public function jabatan(){
+    public function jabatan_pegawai(){
         return $this->belongsTo(JabatanPegawai::class);
     }
 }
