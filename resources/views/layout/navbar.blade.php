@@ -20,4 +20,8 @@
         </div>
     </div>
     </nav>
+    <div class="content">
+        <!-- Content -->
+        @yield('content')
+    </div>
 </div>
