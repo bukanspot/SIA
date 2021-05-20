@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+// Buku
 Route::get('/buku', 'BukuController@index');
 Route::post('/buku', 'BukuController@create');
 Route::delete('/buku/{id}', 'BukuController@destroy');
+Route::patch('/buku/{id}', 'BukuController@update');
