@@ -31,20 +31,20 @@ class PegawaiController extends Controller
         return back();
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $request->validate(
-    //         ['nama_buku'=> 'required'],
-    //         ['jenis_id' => 'required'],
-    //         ['stok' => 'required']
-    //     );
+    public function update(Request $request, $id)
+    {
+        $request->validate(
+            ['nama_pegawai'=> 'required'],
+            ['jabatan_id' => 'required'],
+            ['alamat' => 'required']
+        );
 
-    //     Pegawai::where('id', $id)
-    //         ->update(
-    //             ['nama_buku' => $request->nama_buku],
-    //             ['jenis_buku_id' => $request->jenis_id],
-    //             ['stok' => $request->stok]
-    //         );
-    //     return back();
-    // }
+        Pegawai::where('id', $id)
+            ->update([
+                'nama_pegawai' => $request->nama_pegawai,
+                'jabatan_pegawai_id' => $request->jabatan_id,
+                'alamat' => $request->alamat
+            ]);
+        return back();
+    }
 }

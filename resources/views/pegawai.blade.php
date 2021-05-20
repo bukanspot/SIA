@@ -79,7 +79,7 @@
                                                                  <div class="row">
                                                                       <div class="col-md-12">
                                                                            <div class="form-group">
-                                                                           <select name="jenis_id" class="dropdown-item2 form-control ">
+                                                                           <select name="jabatan_id" class="dropdown-item2 form-control ">
                                                                                 <option value={{ $pegawai->jabatan_pegawai->id }}>{{ $pegawai->jabatan_pegawai->nama_jabatan }}</option>
                                                                                 @foreach ($jabatan as $editjabatan)
                                                                                      <option value="{{ $editjabatan->id }}">{{ $editjabatan->nama_jabatan }}</option>
