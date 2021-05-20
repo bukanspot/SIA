@@ -17,7 +17,7 @@ class CreateTransaksisTable extends Migration
             $table->id();
             $table->string('nama_peminjam');
             $table->text('alamat');
-            $table->bigInteger('total');
+            $table->string('telepon');
             $table->timestamps();
         });
     }
