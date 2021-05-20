@@ -46,7 +46,7 @@
                                    {{ $buku->nama_buku }}
                               </td>
                               <td>
-                                   {{ $buku->jenis_buku_id }}
+                                   {{ $buku->jenis_buku->nama_jenis }}
                               </td>
                               <td>
                                    {{ $buku->stok }}

@@ -8,7 +8,7 @@ class JenisBuku extends Model
 {
     protected $fillable = ['nama_jenis'];
 
-    public function buku(){
+    public function bukus(){
         return $this->hasMany(Buku::class);
     }
 }
