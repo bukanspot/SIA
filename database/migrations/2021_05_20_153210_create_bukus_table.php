@@ -15,6 +15,8 @@ class CreateBukusTable extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_buku');
+            $table->bigInteger('stok');
             $table->timestamps();
         });
     }
