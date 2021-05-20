@@ -24,4 +24,10 @@ class BukuController extends Controller
         Buku::create($request->all());
         return back();
     }
+
+    public function destroy($id)
+    {
+        Buku::destroy($id);
+        return back();
+    }
 }

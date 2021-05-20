@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/buku', 'BukuController@index');
 Route::post('/buku', 'BukuController@create');
+Route::delete('/buku/{id}', 'BukuController@destroy');

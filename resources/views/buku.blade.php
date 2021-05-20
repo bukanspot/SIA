@@ -128,20 +128,20 @@
                                    </div> --}}
                                    <!-- Delete -->
                                    <button class="btn" data-toggle="modal" href="#delete{{ $buku->id }}">Hapus</button>
-                                   {{-- <div class="modal fade" id="delete{{ $barang->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-                                        <form method="POST" action="/barang/{{ $barang->id }}">
+                                   <div class="modal fade" id="delete{{ $buku->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+                                        <form method="POST" action="/buku/{{ $buku->id }}">
                                              @method('delete')
                                              @csrf
                                              <div class="modal-dialog" role="document">
                                              <div class="modal-content">
                                              <div class="modal-header">
-                                             <h5 class="modal-title" id="delete">Delete Barang</h5>
+                                             <h5 class="modal-title" id="delete">Delete Buku</h5>
                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                   <span aria-hidden="true">&times;</span>
                                              </button>
                                              </div>
                                              <div class="modal-body">
-                                                  <p>Apakah yakin mau menghapus {{ $barang->nama_barang }}?</p>
+                                                  <p>Apakah yakin mau menghapus "{{ $buku->nama_buku }}"?</p>
                                                   <div class="modal-footer">
                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                        <button type="submit" class="btn btn-primary">Iya</button>
@@ -149,7 +149,7 @@
                                              </div>
                                              </div>
                                         </form>
-                                   </div> --}}
+                                   </div>
                               </td>
                          </tr>
                          @endforeach
