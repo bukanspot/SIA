@@ -12,6 +12,12 @@
                     <p>Dashboard</p>
                 </a>
             </li>
+            <li class="nav-item{{ request()->is('pinjam*') ? ' active' : ''}}">
+                <a class="nav-link" href="{{ url('/pinjam') }}">
+                    <i class="material-icons">receipt_long</i>
+                    <p>Pinjam</p>
+                </a>
+            </li>
             <li class="nav-item{{ request()->is('buku*') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ url('/buku') }}">
                     <i class="material-icons">book</i>
