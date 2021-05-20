@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+
 // Buku
 Route::get('/buku', 'BukuController@index');
 Route::post('/buku', 'BukuController@create');
@@ -28,3 +29,9 @@ Route::get('/pegawai', 'PegawaiController@index');
 Route::post('/pegawai', 'PegawaiController@create');
 Route::delete('/pegawai/{id}', 'PegawaiController@destroy');
 Route::patch('/pegawai/{id}', 'PegawaiController@update');
+
+// Transaksi
+Route::get('/pinjam', 'TransaksiController@index');
+Route::post('/pinjam', 'TransaksiController@create');
+Route::delete('/pinjam/{id}', 'TransaksiController@destroy');
+Route::patch('/pinjam/{id}', 'TransaksiController@update');
