@@ -18,4 +18,10 @@ class BukuController extends Controller
             ->with(['jenis' => $jenis])
         ;
     }
+
+    public function create(Request $request)
+    {
+        Buku::create($request->all());
+        return back();
+    }
 }

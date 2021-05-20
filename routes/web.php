@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/buku', 'BukuController@index');
+Route::post('/buku', 'BukuController@create');

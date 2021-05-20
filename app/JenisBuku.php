@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class JenisBuku extends Model
 {
-    //
+    protected $fillable = ['nama_jenis'];
+
+    public function buku(){
+        return $this->hasMany(Buku::class);
+    }
 }
