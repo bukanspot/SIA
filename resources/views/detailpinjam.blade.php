@@ -49,9 +49,13 @@
                                         </div>
                                    </div>
                               </div>
-                                   <input type="hidden" class="form-control" name="transaksi_id" value="{{ $id_transaksi->id }}">
-                                   <button class="btn btn-primary pull-left" href="#">Selesai</button>
-                                   <button type="submit" class="btn btn-primary pull-right">Tambah</button>
+                              <input type="hidden" class="form-control" name="transaksi_id" value="{{ $id_transaksi->id }}">
+                              <button type="submit" class="btn btn-primary pull-right">Tambah</button>
+                         </form>
+                         <form action="/pinjam/{{ $id_transaksi->id }}" method="post">
+                              @method('patch')
+                              @csrf
+                              <button type="submit" class="btn btn-primary pull-left">Selesai</button>
                          </form>
                     </div>
                </div>

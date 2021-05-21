@@ -78,4 +78,13 @@ class TransaksiController extends Controller
         ;
     }
 
+    public function update(Request $request, $id)
+    {
+        Transaksi::where('id', $id)
+            ->update([
+                'status' => '1'
+            ]);
+            
+        return redirect('/pinjam');
+    }
 }
