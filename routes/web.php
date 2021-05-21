@@ -4,21 +4,15 @@ use App\Http\Controllers\TransaksiController;
 use App\Transaksi;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('dashboard');
+    return redirect('pinjam');
 });
 
+// Transaksi
+Route::get('/pinjam', 'TransaksiController@index');
+Route::post('/pinjam', 'TransaksiController@create');
+Route::post('/pinjam/{id}', 'TransaksiController@add_book');
+Route::patch('/pinjam/{id}', 'TransaksiController@update');
 
 // Buku
 Route::get('/buku', 'BukuController@index');
@@ -31,12 +25,3 @@ Route::get('/pegawai', 'PegawaiController@index');
 Route::post('/pegawai', 'PegawaiController@create');
 Route::delete('/pegawai/{id}', 'PegawaiController@destroy');
 Route::patch('/pegawai/{id}', 'PegawaiController@update');
-
-// Transaksi
-Route::get('/pinjam', 'TransaksiController@index');
-Route::post('/pinjam', 'TransaksiController@create');
-Route::post('/pinjam/{id}', 'TransaksiController@add_book');
-
-Route::patch('/pinjam/{id}', 'TransaksiController@update');
-
-Route::delete('/pinjam/{id}', 'TransaksiController@destroy');

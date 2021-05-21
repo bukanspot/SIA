@@ -70,8 +70,7 @@
                          <table class="table">
                               <colgroup>
                                    <col span="1" style="width: 10%;">
-                                   <col span="1" style="width: 80%;">
-                                   <col span="1" style="width: 10%;">
+                                   <col span="1" style="width: 90%;">
                               </colgroup>
                               <thead class=" text-primary">
                                    <th>
@@ -79,9 +78,6 @@
                                    </th>
                                    <th>
                                         Nama Buku
-                                   </th>
-                                   <th>
-                                        Aksi
                                    </th>
                               </thead>
                               <tbody>
@@ -92,32 +88,6 @@
                                         </td>
                                         <td>
                                              {{ $bukus->nama_buku }}
-                                        </td>
-                                        <td>
-                                             <!-- Delete -->
-                                             <button class="btn" data-toggle="modal" href="#delete{{ $bukus->id }}">Hapus</button>
-                                             <div class="modal fade" id="delete{{ $bukus->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-                                                  <form method="POST" action="/buku/{{ $bukus->id }}">
-                                                       @method('delete')
-                                                       @csrf
-                                                       <div class="modal-dialog" role="document">
-                                                       <div class="modal-content">
-                                                       <div class="modal-header">
-                                                       <h5 class="modal-title" id="delete">Delete Buku</h5>
-                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                       </button>
-                                                       </div>
-                                                       <div class="modal-body">
-                                                            <p>Apakah yakin mau menghapus "{{ $bukus->nama_buku }}"?</p>
-                                                            <div class="modal-footer">
-                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                                 <button type="submit" class="btn btn-primary">Iya</button>
-                                                            </div>
-                                                       </div>
-                                                       </div>
-                                                  </form>
-                                             </div>
                                         </td>
                                    </tr>
                                    @endforeach

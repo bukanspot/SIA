@@ -61,7 +61,6 @@ class TransaksiController extends Controller
         $buku = Buku::get();
 
         $id_detail_transaksi = DetailTransaksi::get()->where('transaksi_id', $id_transaksi->id);
-        
         $id_buku = DB::select('SELECT * 
         FROM bukus, detail_transaksis, transaksis 
         WHERE bukus.id = detail_transaksis.buku_id 
@@ -75,6 +74,7 @@ class TransaksiController extends Controller
             ->with(['buku' => $buku])
             ->with(['id_buku' => $id_buku])
             ->with(['jenis' => $jenis])
+            ->with(['id_detail_transaksi' => $id_detail_transaksi])
         ;
     }
 
@@ -84,7 +84,7 @@ class TransaksiController extends Controller
             ->update([
                 'status' => '1'
             ]);
-            
+
         return redirect('/pinjam');
     }
 }
