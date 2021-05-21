@@ -29,17 +29,12 @@
                                              </td>
                                         </tr>
                                         <tr>
-                                             <td>
-                                                  {{ $id_transaksi->id }}
-                                             </td>
-                                        </tr>
-                                        <tr>
                                              <td></td>
                                         </tr>
                                    </tbody>
                               </table>
                          </div>
-                         <form method="POST" action="/pinjam">
+                         <form method="POST" action="/pinjam/{{ $id_transaksi->id }}">
                               @method('post')
                               @csrf
                               <div class="row">
@@ -47,9 +42,9 @@
                                         <div class="form-group">
                                         <select name="pegawai_id" class="dropdown-item2 form-control ">
                                              <option>Nama Buku</option>
-                                             {{-- @foreach ($pegawai as $pegawai)
-                                                  <option value="{{ $pegawai->id }}">{{ $pegawai->nama_pegawai }}</option>
-                                             @endforeach --}}
+                                             @foreach ($buku as $buku)
+                                                  <option value="{{ $buku->id }}">{{ $buku->nama_buku }}</option>
+                                             @endforeach
                                         </select>
                                         </div>
                                    </div>
@@ -70,8 +65,7 @@
                          <table class="table">
                               <colgroup>
                                    <col span="1" style="width: 10%;">
-                                   <col span="1" style="width: 55%;">
-                                   <col span="1" style="width: 25%;">
+                                   <col span="1" style="width: 80%;">
                                    <col span="1" style="width: 10%;">
                               </colgroup>
                               <thead class=" text-primary">
@@ -82,12 +76,48 @@
                                         Nama Buku
                                    </th>
                                    <th>
-                                        Jenis
-                                   </th>
-                                   <th>
                                         Aksi
                                    </th>
                               </thead>
+                              <tbody>
+                                   @foreach ($id_buku as $bukus)
+                                   <tr>
+                                        <td>
+                                             {{ $loop->iteration }}
+                                        </td>
+                                        <td>
+                                             {{ $bukus->nama_buku }}
+                                        </td>
+                                        <td>
+                                        <td>
+                                             {{-- <!-- Delete -->
+                                             <button class="btn" data-toggle="modal" href="#delete{{ $buku->id }}">Hapus</button>
+                                             <div class="modal fade" id="delete{{ $buku->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+                                                  <form method="POST" action="/buku/{{ $buku->id }}">
+                                                       @method('delete')
+                                                       @csrf
+                                                       <div class="modal-dialog" role="document">
+                                                       <div class="modal-content">
+                                                       <div class="modal-header">
+                                                       <h5 class="modal-title" id="delete">Delete Buku</h5>
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                       </div>
+                                                       <div class="modal-body">
+                                                            <p>Apakah yakin mau menghapus "{{ $buku->nama_buku }}"?</p>
+                                                            <div class="modal-footer">
+                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                                 <button type="submit" class="btn btn-primary">Iya</button>
+                                                            </div>
+                                                       </div>
+                                                       </div>
+                                                  </form>
+                                             </div> --}}
+                                        </td>
+                                   </tr>
+                                   @endforeach
+                              </tbody>
                          </table>
                          </div>
                     </div>

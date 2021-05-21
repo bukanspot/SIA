@@ -11,4 +11,8 @@ class Transaksi extends Model
     public function pegawais(){
         return $this->belongsTo(Pegawai::class);
     }
+
+    public function detailtransaksis(){
+        return $this->belongsTo(DetailTransaksi::class);
+    }
 }

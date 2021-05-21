@@ -11,4 +11,8 @@ class Pegawai extends Model
     public function jabatan_pegawai(){
         return $this->belongsTo(JabatanPegawai::class);
     }
+
+    public function transaksis(){
+        return $this->hasMany(Transaksi::class);
+    }
 }

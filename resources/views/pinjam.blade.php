@@ -49,6 +49,16 @@
                                         </select>
                                         </div>
                                    </div>
+                                   <div class="col-md-12">
+                                        <div class="form-group">
+                                        <select name="buku_id" class="dropdown-item2 form-control ">
+                                             <option>Nama Buku</option>
+                                             @foreach ($buku as $buku)
+                                                  <option value="{{ $buku->id }}">{{ $buku->nama_buku }}</option>
+                                             @endforeach
+                                        </select>
+                                        </div>
+                                   </div>
                               </div>
                                    <button type="submit" class="btn btn-primary pull-right">Next</button>
                          </form>

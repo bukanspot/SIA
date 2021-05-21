@@ -11,4 +11,8 @@ class Buku extends Model
     public function jenis_buku(){
         return $this->belongsTo(JenisBuku::class);
     }
+
+    public function detail_transaksi(){
+        return $this->belongsTo(DetailTransaksi::class);
+    }
 }
