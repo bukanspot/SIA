@@ -56,7 +56,26 @@ class TransaksiController extends Controller
     public function add_book(Request $request)
     {
         DetailTransaksi::create($request->all());
-        return back();
+        $id_transaksi = Transaksi::latest()->first();
+        $pegawai = Pegawai::get();
+        $buku = Buku::get();
+
+        $id_detail_transaksi = DetailTransaksi::get()->where('transaksi_id', $id_transaksi->id);
+        
+        $id_buku = DB::select('SELECT * 
+        FROM bukus, detail_transaksis, transaksis 
+        WHERE bukus.id = detail_transaksis.buku_id 
+        AND transaksis.id = detail_transaksis.transaksi_id 
+        AND transaksis.id = ?', [$id_transaksi->id]);
+
+        $jenis = JenisBuku::get();
+        return view('detailpinjam')
+            ->with(['id_transaksi' => $id_transaksi])
+            ->with(['pegawai' => $pegawai])
+            ->with(['buku' => $buku])
+            ->with(['id_buku' => $id_buku])
+            ->with(['jenis' => $jenis])
+        ;
     }
 
 }

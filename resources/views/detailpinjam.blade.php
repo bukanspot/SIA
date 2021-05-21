@@ -40,7 +40,7 @@
                               <div class="row">
                                    <div class="col-md-12">
                                         <div class="form-group">
-                                        <select name="pegawai_id" class="dropdown-item2 form-control ">
+                                        <select name="buku_id" class="dropdown-item2 form-control ">
                                              <option>Nama Buku</option>
                                              @foreach ($buku as $buku)
                                                   <option value="{{ $buku->id }}">{{ $buku->nama_buku }}</option>
@@ -49,6 +49,7 @@
                                         </div>
                                    </div>
                               </div>
+                                   <input type="hidden" class="form-control" name="transaksi_id" value="{{ $id_transaksi->id }}">
                                    <button class="btn btn-primary pull-left" href="#">Selesai</button>
                                    <button type="submit" class="btn btn-primary pull-right">Tambah</button>
                          </form>
@@ -89,11 +90,10 @@
                                              {{ $bukus->nama_buku }}
                                         </td>
                                         <td>
-                                        <td>
-                                             {{-- <!-- Delete -->
-                                             <button class="btn" data-toggle="modal" href="#delete{{ $buku->id }}">Hapus</button>
-                                             <div class="modal fade" id="delete{{ $buku->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-                                                  <form method="POST" action="/buku/{{ $buku->id }}">
+                                             <!-- Delete -->
+                                             <button class="btn" data-toggle="modal" href="#delete{{ $bukus->id }}">Hapus</button>
+                                             <div class="modal fade" id="delete{{ $bukus->id }}" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+                                                  <form method="POST" action="/buku/{{ $bukus->id }}">
                                                        @method('delete')
                                                        @csrf
                                                        <div class="modal-dialog" role="document">
@@ -105,7 +105,7 @@
                                                        </button>
                                                        </div>
                                                        <div class="modal-body">
-                                                            <p>Apakah yakin mau menghapus "{{ $buku->nama_buku }}"?</p>
+                                                            <p>Apakah yakin mau menghapus "{{ $bukus->nama_buku }}"?</p>
                                                             <div class="modal-footer">
                                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                                  <button type="submit" class="btn btn-primary">Iya</button>
@@ -113,7 +113,7 @@
                                                        </div>
                                                        </div>
                                                   </form>
-                                             </div> --}}
+                                             </div>
                                         </td>
                                    </tr>
                                    @endforeach

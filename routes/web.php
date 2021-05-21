@@ -35,7 +35,7 @@ Route::patch('/pegawai/{id}', 'PegawaiController@update');
 // Transaksi
 Route::get('/pinjam', 'TransaksiController@index');
 Route::post('/pinjam', 'TransaksiController@create');
-Route::get('/pinjam/{id}', 'TransaksiController@add_book');
+Route::post('/pinjam/{id}', 'TransaksiController@add_book');
 
 
 Route::delete('/pinjam/{id}', 'TransaksiController@destroy');
