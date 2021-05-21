@@ -16,10 +16,12 @@ class TransaksiController extends Controller
     {
         $pegawai = Pegawai::get();
         $buku = Buku::get();
+        $transaksi = Transaksi::where('status', '1')->get();
 
         return view('pinjam')
             ->with(['pegawai' => $pegawai])
             ->with(['buku' => $buku])
+            ->with(['transaksi' => $transaksi])
         ;
     }
 
@@ -78,11 +80,21 @@ class TransaksiController extends Controller
         ;
     }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
         Transaksi::where('id', $id)
             ->update([
                 'status' => '1'
+            ]);
+
+        return redirect('/pinjam');
+    }
+
+    public function kembali($id)
+    {
+        Transaksi::where('id', $id)
+            ->update([
+                'status' => '0'
             ]);
 
         return redirect('/pinjam');

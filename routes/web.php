@@ -13,6 +13,7 @@ Route::get('/pinjam', 'TransaksiController@index');
 Route::post('/pinjam', 'TransaksiController@create');
 Route::post('/pinjam/{id}', 'TransaksiController@add_book');
 Route::patch('/pinjam/{id}', 'TransaksiController@update');
+Route::patch('/kembali/{id}', 'TransaksiController@kembali');
 
 // Buku
 Route::get('/buku', 'BukuController@index');
