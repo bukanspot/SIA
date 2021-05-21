@@ -6,16 +6,10 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item{{ request()->is('/') ? ' active' : ''}}">
-                <a class="nav-link" href="{{ url('/') }}">
-                    <i class="material-icons">dashboard</i>
-                    <p>Dashboard</p>
-                </a>
-            </li>
             <li class="nav-item{{ request()->is('pinjam*') ? ' active' : ''}}">
                 <a class="nav-link" href="{{ url('/pinjam') }}">
-                    <i class="material-icons">receipt_long</i>
-                    <p>Pinjam</p>
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-item{{ request()->is('buku*') ? ' active' : ''}}">
