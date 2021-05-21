@@ -20,6 +20,9 @@ class TransaksiController extends Controller
         Transaksi::create($request->all());
 
         $id_transaksi = Transaksi::latest()->first();
+        // return redirect()->intended(route('pinjam', ['id' => $id_transaksi]));
         return view('detailpinjam')->with(['id_transaksi' => $id_transaksi]);
     }
+
+
 }

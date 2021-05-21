@@ -11,7 +11,7 @@
                          <h4 class="card-title ">Tambah Peminjam</h4>
                     </div>
                     <div class="card-body">
-                         <form method="POST" action="/detailpinjam">
+                         <form method="POST" action="/pinjam">
                               @method('post')
                               @csrf
                               <div class="row">
