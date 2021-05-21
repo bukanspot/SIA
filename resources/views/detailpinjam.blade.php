@@ -11,7 +11,7 @@
                          <h4 class="card-title ">Tambah Peminjam</h4>
                     </div>
                     <div class="card-body">
-                         <form method="POST" action="/detailpinjam">
+                         <form method="POST" action="/pinjam">
                               @method('post')
                               @csrf
                               <div class="row">
@@ -41,11 +41,11 @@
                               <div class="row">
                                    <div class="col-md-12">
                                         <div class="form-group">
-                                        <select name="pegawai_id" class="dropdown-item2 form-control ">
+                                        <select name="pegawai" class="dropdown-item2 form-control ">
                                              <option>Penerima</option>
-                                             @foreach ($pegawai as $pegawai)
+                                             {{-- @foreach ($pegawai as $pegawai)
                                                   <option value="{{ $pegawai->id }}">{{ $pegawai->nama_pegawai }}</option>
-                                             @endforeach
+                                             @endforeach --}}
                                         </select>
                                         </div>
                                    </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::patch('/pegawai/{id}', 'PegawaiController@update');
 
 // Transaksi
 Route::get('/pinjam', 'TransaksiController@index');
-Route::post('/pinjam', 'TransaksiController@create');
+Route::post('/detailpinjam', 'TransaksiController@create');
+
+
 Route::delete('/pinjam/{id}', 'TransaksiController@destroy');
 Route::patch('/pinjam/{id}', 'TransaksiController@update');
