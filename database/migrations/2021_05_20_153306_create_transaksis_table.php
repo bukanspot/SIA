@@ -18,6 +18,7 @@ class CreateTransaksisTable extends Migration
             $table->string('nama_peminjam');
             $table->text('alamat');
             $table->string('telepon');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

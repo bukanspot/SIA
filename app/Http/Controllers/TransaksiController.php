@@ -22,11 +22,4 @@ class TransaksiController extends Controller
         $id_transaksi = Transaksi::latest()->first();
         return view('detailpinjam')->with(['id_transaksi' => $id_transaksi]);
     }
-
-    public function detailpinjam(Request $id_transaksi)
-    {
-        $pegawai = Pegawai::get();
-
-        return view('pinjam')->with(['pegawai' => $pegawai]);
-    }
 }
